@@ -1,34 +1,58 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Avoca Island</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Avoca Island – The Storm</title>
 
-  <!-- META PIXEL -->
+  <!-- Meta Pixel Code -->
   <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', 'YOUR_PIXEL_ID_HERE');
-    fbq('track', 'ViewContent');
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+
+  // ✅ IMPORTANT: Replace with your Pixel ID
+  fbq('init', 'YOUR_PIXEL_ID_HERE');
+
+  // ✅ Fires when page loads
+  fbq('track', 'ViewContent');
   </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID_HERE&ev=ViewContent&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
 
-</head>
-<body style="font-family: Arial; text-align:center; padding-top:50px;">
-
-  <h1>Un-putdownable. A gritty mystery readers binge.</h1>
-
-  <p>Readers call <strong>Avoca Island</strong> “hooked me immediately” and “couldn’t stop reading.”</p>
-
-  <button onclick="fbq('track','Subscribe'); window.location.href='YOUR_AMAZON_LINK_HERE';"
-          style="font-size:20px; padding:15px 30px; cursor:pointer;">
-    Read on Amazon
-  </button>
-
-</body>
-</html>
+  <style>
+    :root{
+      --bg:#f4f4f4;
+      --card:#ffffff;
+      --text:#1a1a1a;
+      --muted:#5a5a5a;
+      --btn:#2f3e63;
+      --btnHover:#24314f;
+      --shadow: 0 10px 30px rgba(0,0,0,.10);
+      --radius: 10px;
+      --max: 980px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.4;
+    }
+    .wrap{
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:32px 16px;
+    }
+    .card{
+      width:100
