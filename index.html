@@ -9,7 +9,7 @@
   <!-- Open Graph -->
   <meta property="og:type" content="book" />
   <meta property="og:url" content="https://thesavagebooks.github.io/avoca-landing/" />
-  <meta property="og:title" content="The Freaks of Avoca Island: The Storm" />
+  <meta property="og:title" content="The Freaks of Avoca Island: THE STORM" />
   <meta property="og:image" content="https://bookfunnelimages.com/images/covers/aj480owvkm/cover_md.jpg" />
   <meta property="og:description"
         content="Book one is a complete, fast read—you won’t be left hanging.
@@ -18,7 +18,7 @@ Lawrence Mayfield crawls out of the mud with six bullet wounds, no memory of who
 Locals whisper about the LaRue dynasty—smugglers, killers, kings of the swamp. But it’s the other things that haunt the island: carnival ruins that still breathe, a Keeper who claims the island keeps its own balance, and secrets that refuse to stay buried.
 The Storm is a fast, bingeable crime-gothic series." />
 
-  <title>The Freaks of Avoca Island: The Storm</title>
+  <title>The Freaks of Avoca Island: THE STORM</title>
 
   <!-- Facebook Pixel Code -->
   <script>
@@ -40,20 +40,24 @@ The Storm is a fast, bingeable crime-gothic series." />
 
   <style>
     :root{
-      /* warmer, moodier palette */
-      --bg:#f2f0ec;
+      /* Blue panel look (not gray) */
+      --bg:#e9edf5;
       --card:#ffffff;
-      --panel:#e6e3dd;          /* smaller, softer gray */
-      --ink:#12151e;
-      --muted:#2b3246;
+      --panel:#e4eaf6;      /* blue-ish panel */
+      --ink:#151a26;
+      --muted:#2c3550;
 
-      --brand:#1f2f57;
-      --brand-dark:#162241;
+      --brand:#223159;
+      --brand-dark:#182444;
 
-      --border: rgba(18,21,30,.10);
+      --border: rgba(20,25,35,.10);
       --shadow: 0 18px 40px rgba(0,0,0,.10);
-      --radius: 18px;
+      --radius: 16px;
       --max: 980px;
+
+      /* Button glow accent */
+      --glow:#2fe6d3;       /* turquoise */
+      --glow2:#ffd966;      /* soft yellow */
     }
 
     *{box-sizing:border-box}
@@ -62,13 +66,13 @@ The Storm is a fast, bingeable crime-gothic series." />
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
       background:var(--bg);
       color:var(--ink);
-      line-height:1.55;
+      line-height:1.6;
     }
 
     .wrap{
       max-width: var(--max);
       margin: 0 auto;
-      padding: 28px 16px 44px;
+      padding: 34px 16px 56px;
     }
 
     .shell{
@@ -79,104 +83,142 @@ The Storm is a fast, bingeable crime-gothic series." />
       overflow: hidden;
     }
 
-    /* TOP AREA */
+    /* TOP PANEL */
     .top{
-      padding: 22px 22px 18px;   /* tighter */
+      background: var(--panel);
+      padding: 26px;
       display:grid;
-      grid-template-columns: 320px 1fr;
-      gap: 22px;
+      grid-template-columns: 300px 1fr;
+      gap: 26px;
       align-items:center;
-      background: #fff;
     }
 
     .cover{
       width:100%;
-      max-width: 320px;
+      max-width: 300px;
       margin: 0 auto;
-      border-radius: 14px;
+      border-radius: 12px;
       overflow:hidden;
       background:#fff;
-      box-shadow: 0 16px 30px rgba(0,0,0,.16);
+      box-shadow: 0 18px 35px rgba(0,0,0,.18);
     }
     .cover img{display:block;width:100%;height:auto}
 
-    /* SMALLER GRAY PANEL AROUND TITLE/QUOTES */
-    .titlePanel{
-      display:inline-block;
-      background: var(--panel);
-      border-radius: 14px;
-      padding: 18px 18px 16px;   /* smaller panel */
-      max-width: 640px;
-    }
-
+    /* Title (emboss + drop shadow) */
     h1{
       margin:0 0 10px 0;
-      font-size: clamp(28px, 3.0vw, 40px);
-      line-height:1.12;
+      font-size: clamp(28px, 3.1vw, 42px);
+      line-height:1.15;
       letter-spacing:.2px;
+      color:#111827;
+      text-shadow:
+        0 2px 0 rgba(255,255,255,.55),
+        0 10px 22px rgba(0,0,0,.20);
     }
 
+    /* Tagline in courier type */
     .tagline{
-      margin: 0 0 12px 0;
-      font-family: Georgia, "Times New Roman", Times, serif;
-      font-size: clamp(18px, 1.9vw, 22px);
+      margin:0 0 12px 0;
+      font-weight: 700;
+      font-family: "Courier New", Courier, monospace;
+      font-size: clamp(18px, 2.0vw, 22px);
       color: var(--muted);
-      font-weight: 600;
+      letter-spacing: .25px;
     }
 
-    .quotes{
-      margin: 0;
-      padding-left: 18px;
-      color: #1e2433;
+    .quote{
+      margin:0;
       font-style: italic;
+      color:#1f2a44;
       font-size: 16px;
       line-height: 1.45;
+      max-width: 56ch;
     }
-    .quotes li{ margin: 6px 0; }
 
-    /* BOTTOM AREA */
+    /* BOTTOM */
     .bottom{
-      padding: 14px 22px 22px;  /* closer up */
+      padding: 22px 26px 28px;
       display:grid;
       grid-template-columns: 1fr 320px;
-      gap: 22px;
+      gap: 26px;
       align-items:start;
-      background: #fff;
+      background: var(--card);
     }
 
-    /* Summary bigger + closer */
+    /* Revert to earlier readable size */
     .bodyText{
-      font-size: 20px;           /* bigger */
+      font-size: 16px;
       color: var(--ink);
-      margin-top: 2px;
     }
-    .bodyText p{margin:0 0 12px 0}
+    .bodyText p{margin:0 0 14px 0}
     .bodyText p:last-child{margin-bottom:0}
 
     .ctaCol{
       text-align:center;
-      padding-top: 4px;
+      padding-top: 6px;
     }
 
+    /* BUTTON: embossed + glow */
     .btn{
+      position: relative;
       display:block;
-      width: 100%;
+      width:100%;
       background: var(--brand);
       color:#fff;
       text-decoration:none;
       font-weight: 900;
-      letter-spacing:.6px;
+      letter-spacing:.5px;
       padding: 14px 18px;
       border-radius: 12px;
-      border: 1px solid rgba(255,255,255,.12);
-      box-shadow: 0 10px 20px rgba(31,47,87,.22);
+
+      /* emboss vibe + structure */
+      border: 1px solid rgba(255,255,255,.14);
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.28), /* top highlight */
+        inset 0 -2px 0 rgba(0,0,0,.22),      /* bottom “pressed” edge */
+        0 14px 30px rgba(34,49,89,.28),      /* normal shadow */
+        0 0 0 2px rgba(47,230,211,.10),      /* faint ring */
+        0 0 28px rgba(47,230,211,.22),       /* turquoise glow */
+        0 0 18px rgba(255,217,102,.14);      /* subtle yellow warmth */
       transition: transform .06s ease, background .15s ease, box-shadow .15s ease;
     }
-    .btn:hover{background: var(--brand-dark); box-shadow: 0 14px 28px rgba(31,47,87,.26)}
-    .btn:active{transform: translateY(1px)}
+
+    /* soft glow aura overlay */
+    .btn::before{
+      content:"";
+      position:absolute;
+      inset:-6px;
+      border-radius: 14px;
+      background:
+        radial-gradient(80% 120% at 50% 0%,
+          rgba(47,230,211,.24),
+          rgba(47,230,211,0) 60%),
+        radial-gradient(90% 140% at 50% 120%,
+          rgba(255,217,102,.16),
+          rgba(255,217,102,0) 65%);
+      filter: blur(6px);
+      opacity: .85;
+      z-index: -1;
+      pointer-events:none;
+    }
+
+    .btn:hover{
+      background: var(--brand-dark);
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.30),
+        inset 0 -2px 0 rgba(0,0,0,.24),
+        0 18px 38px rgba(34,49,89,.30),
+        0 0 0 2px rgba(47,230,211,.14),
+        0 0 34px rgba(47,230,211,.26),
+        0 0 22px rgba(255,217,102,.16);
+    }
+
+    .btn:active{
+      transform: translateY(1px);
+    }
 
     .available{
-      margin-top: 12px;
+      margin-top: 14px;
       font-size: 13px;
       letter-spacing:.2px;
       color: var(--muted);
@@ -196,24 +238,32 @@ The Storm is a fast, bingeable crime-gothic series." />
       gap:10px;
       text-decoration:none;
       color: var(--brand);
-      font-weight: 900;
+      font-weight: 800;
     }
     .storeIcon{width:34px;height:34px;display:block}
 
-    /* Mobile/Tablet */
+    /* No "bookfunnel" footer branding */
+    .footer{
+      padding: 14px 0 18px;
+      text-align:center;
+      opacity:.0; /* effectively removes it */
+      height: 0;
+      overflow: hidden;
+    }
+
+    /* Tablet & Mobile */
     @media (max-width: 900px){
       .top{grid-template-columns:1fr; text-align:center}
       .bottom{grid-template-columns:1fr}
-      .titlePanel{margin: 0 auto;}
+      .ctaCol{order:2}
     }
 
     @media (max-width: 480px){
-      .wrap{padding: 18px 12px 34px}
-      .top{padding: 16px}
-      .bottom{padding: 12px 16px 18px}
-      .cover{max-width: 270px}
-      .bodyText{font-size: 18px}
-      .quotes{font-size: 15px}
+      .wrap{padding: 20px 14px 44px}
+      .top{padding: 18px}
+      .bottom{padding: 18px}
+      .cover{max-width: 260px}
+      .bodyText{font-size: 16px}
     }
   </style>
 </head>
@@ -224,19 +274,16 @@ The Storm is a fast, bingeable crime-gothic series." />
 
       <section class="top">
         <div class="cover">
-          <img src="https://bookfunnelimages.com/images/covers/aj480owvkm/cover_md.jpg" alt="Book Cover" />
+          <img
+            src="https://bookfunnelimages.com/images/covers/aj480owvkm/cover_md.jpg"
+            alt="The Freaks of Avoca Island: The Storm cover"
+          />
         </div>
 
-        <div class="titlePanel">
-          <h1>The Freaks of Avoca Island:<br/>The Storm</h1>
-
-          <div class="tagline">A paranormal gothic southern mystery.</div>
-
-          <ul class="quotes">
-            <li>“Couldn’t stop reading.”</li>
-            <li>“Hooked me from the beginning.”</li>
-            <li>“Un-putdownable.”</li>
-          </ul>
+        <div>
+          <h1>The Freaks of Avoca Island: THE STORM</h1>
+          <p class="tagline">A paranormal gothic southern mystery.</p>
+          <p class="quote">"Hooked me from the beginning. Couldn't stop reading."</p>
         </div>
       </section>
 
@@ -251,6 +298,7 @@ The Storm is a fast, bingeable crime-gothic series." />
         </div>
 
         <div class="ctaCol">
+          <!-- BUTTON (goes to your BookFunnel buy redirect) -->
           <a
             id="amazonBtn"
             class="btn"
@@ -261,6 +309,7 @@ The Storm is a fast, bingeable crime-gothic series." />
 
           <div class="available">Available on</div>
 
+          <!-- AMAZON ICON LINK -->
           <div class="storeRow">
             <a
               id="amazonIcon"
@@ -277,6 +326,7 @@ The Storm is a fast, bingeable crime-gothic series." />
         </div>
       </section>
 
+      <div class="footer"></div>
     </div>
   </div>
 
@@ -293,8 +343,17 @@ The Storm is a fast, bingeable crime-gothic series." />
     const amazonBtn = document.getElementById('amazonBtn');
     const amazonIcon = document.getElementById('amazonIcon');
 
-    if (amazonBtn) amazonBtn.addEventListener('click', () => trackAmazonClick('button'));
-    if (amazonIcon) amazonIcon.addEventListener('click', () => trackAmazonClick('icon'));
+    if (amazonBtn) {
+      amazonBtn.addEventListener('click', function () {
+        trackAmazonClick('button');
+      });
+    }
+
+    if (amazonIcon) {
+      amazonIcon.addEventListener('click', function () {
+        trackAmazonClick('icon');
+      });
+    }
   </script>
 </body>
 </html>
