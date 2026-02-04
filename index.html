@@ -40,7 +40,6 @@ The Storm is a fast, bingeable crime-gothic series." />
 
   <style>
     :root{
-      /* Blue panel look (not gray) */
       --bg:#e9edf5;
       --card:#ffffff;
       --panel:#e4eaf6;      /* blue-ish panel */
@@ -55,9 +54,9 @@ The Storm is a fast, bingeable crime-gothic series." />
       --radius: 16px;
       --max: 980px;
 
-      /* Button glow accent */
-      --glow:#2fe6d3;       /* turquoise */
-      --glow2:#ffd966;      /* soft yellow */
+      /* Accents */
+      --turq:#2fe6d3;       /* turquoise */
+      --yellow:#ffd966;     /* warm yellow */
     }
 
     *{box-sizing:border-box}
@@ -93,6 +92,7 @@ The Storm is a fast, bingeable crime-gothic series." />
       align-items:center;
     }
 
+    /* COVER: moderate turquoise glow */
     .cover{
       width:100%;
       max-width: 300px;
@@ -100,7 +100,10 @@ The Storm is a fast, bingeable crime-gothic series." />
       border-radius: 12px;
       overflow:hidden;
       background:#fff;
-      box-shadow: 0 18px 35px rgba(0,0,0,.18);
+      box-shadow:
+        0 18px 35px rgba(0,0,0,.18),
+        0 0 26px rgba(47,230,211,.32),
+        0 0 54px rgba(47,230,211,.18);
     }
     .cover img{display:block;width:100%;height:auto}
 
@@ -145,10 +148,11 @@ The Storm is a fast, bingeable crime-gothic series." />
       background: var(--card);
     }
 
-    /* Revert to earlier readable size */
+    /* Summary text: Book Antiqua + safe fallbacks */
     .bodyText{
       font-size: 16px;
       color: var(--ink);
+      font-family: "Book Antiqua", "Palatino Linotype", Palatino, Georgia, serif;
     }
     .bodyText p{margin:0 0 14px 0}
     .bodyText p:last-child{margin-bottom:0}
@@ -158,7 +162,7 @@ The Storm is a fast, bingeable crime-gothic series." />
       padding-top: 6px;
     }
 
-    /* BUTTON: embossed + glow */
+    /* BUTTON: yellow glow (moderate) + embossed */
     .btn{
       position: relative;
       display:block;
@@ -171,33 +175,31 @@ The Storm is a fast, bingeable crime-gothic series." />
       padding: 14px 18px;
       border-radius: 12px;
 
-      /* emboss vibe + structure */
       border: 1px solid rgba(255,255,255,.14);
       box-shadow:
-        inset 0 1px 0 rgba(255,255,255,.28), /* top highlight */
-        inset 0 -2px 0 rgba(0,0,0,.22),      /* bottom “pressed” edge */
-        0 14px 30px rgba(34,49,89,.28),      /* normal shadow */
-        0 0 0 2px rgba(47,230,211,.10),      /* faint ring */
-        0 0 28px rgba(47,230,211,.22),       /* turquoise glow */
-        0 0 18px rgba(255,217,102,.14);      /* subtle yellow warmth */
+        inset 0 1px 0 rgba(255,255,255,.28),
+        inset 0 -2px 0 rgba(0,0,0,.22),
+        0 14px 30px rgba(34,49,89,.28),
+        0 0 26px rgba(255,217,102,.28),
+        0 0 54px rgba(255,217,102,.14);
       transition: transform .06s ease, background .15s ease, box-shadow .15s ease;
     }
 
-    /* soft glow aura overlay */
+    /* subtle aura overlay, biased yellow */
     .btn::before{
       content:"";
       position:absolute;
       inset:-6px;
       border-radius: 14px;
       background:
-        radial-gradient(80% 120% at 50% 0%,
-          rgba(47,230,211,.24),
-          rgba(47,230,211,0) 60%),
-        radial-gradient(90% 140% at 50% 120%,
-          rgba(255,217,102,.16),
-          rgba(255,217,102,0) 65%);
-      filter: blur(6px);
-      opacity: .85;
+        radial-gradient(85% 120% at 50% 110%,
+          rgba(255,217,102,.22),
+          rgba(255,217,102,0) 62%),
+        radial-gradient(85% 120% at 50% 0%,
+          rgba(47,230,211,.10),
+          rgba(47,230,211,0) 65%);
+      filter: blur(7px);
+      opacity: .9;
       z-index: -1;
       pointer-events:none;
     }
@@ -208,152 +210,5 @@ The Storm is a fast, bingeable crime-gothic series." />
         inset 0 1px 0 rgba(255,255,255,.30),
         inset 0 -2px 0 rgba(0,0,0,.24),
         0 18px 38px rgba(34,49,89,.30),
-        0 0 0 2px rgba(47,230,211,.14),
-        0 0 34px rgba(47,230,211,.26),
-        0 0 22px rgba(255,217,102,.16);
-    }
-
-    .btn:active{
-      transform: translateY(1px);
-    }
-
-    .available{
-      margin-top: 14px;
-      font-size: 13px;
-      letter-spacing:.2px;
-      color: var(--muted);
-    }
-
-    .storeRow{
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      gap:10px;
-      margin-top:10px;
-    }
-
-    .storeLink{
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      text-decoration:none;
-      color: var(--brand);
-      font-weight: 800;
-    }
-    .storeIcon{width:34px;height:34px;display:block}
-
-    /* No "bookfunnel" footer branding */
-    .footer{
-      padding: 14px 0 18px;
-      text-align:center;
-      opacity:.0; /* effectively removes it */
-      height: 0;
-      overflow: hidden;
-    }
-
-    /* Tablet & Mobile */
-    @media (max-width: 900px){
-      .top{grid-template-columns:1fr; text-align:center}
-      .bottom{grid-template-columns:1fr}
-      .ctaCol{order:2}
-    }
-
-    @media (max-width: 480px){
-      .wrap{padding: 20px 14px 44px}
-      .top{padding: 18px}
-      .bottom{padding: 18px}
-      .cover{max-width: 260px}
-      .bodyText{font-size: 16px}
-    }
-  </style>
-</head>
-
-<body>
-  <div class="wrap">
-    <div class="shell">
-
-      <section class="top">
-        <div class="cover">
-          <img
-            src="https://bookfunnelimages.com/images/covers/aj480owvkm/cover_md.jpg"
-            alt="The Freaks of Avoca Island: The Storm cover"
-          />
-        </div>
-
-        <div>
-          <h1>The Freaks of Avoca Island: THE STORM</h1>
-          <p class="tagline">A paranormal gothic southern mystery.</p>
-          <p class="quote">"Hooked me from the beginning. Couldn't stop reading."</p>
-        </div>
-      </section>
-
-      <section class="bottom">
-        <div class="bodyText">
-          <!-- EXACT BODY TEXT (unchanged) -->
-          <p>Book one is a complete, fast read&mdash;you won&rsquo;t be left hanging.</p>
-          <p>Lightning splits the bayou. An FBI agent wakes up buried alive on an island that shouldn&rsquo;t exist.</p>
-          <p>Lawrence Mayfield crawls out of the mud with six bullet wounds, no memory of who put him there, and no way off Avoca Island. The only road in has washed out. The only bridge has closed behind him.</p>
-          <p>Locals whisper about the LaRue dynasty&mdash;smugglers, killers, kings of the swamp. But it&rsquo;s the other things that haunt the island: carnival ruins that still breathe, a Keeper who claims the island keeps its own balance, and secrets that refuse to stay buried.</p>
-          <p>The Storm is a fast, bingeable crime-gothic series.</p>
-        </div>
-
-        <div class="ctaCol">
-          <!-- BUTTON (goes to your BookFunnel buy redirect) -->
-          <a
-            id="amazonBtn"
-            class="btn"
-            target="_blank"
-            rel="noopener"
-            href="https://buy.bookfunnel.com/9s1ccz48vy?store=direct&format=ebook"
-          >READ ON AMAZON</a>
-
-          <div class="available">Available on</div>
-
-          <!-- AMAZON ICON LINK -->
-          <div class="storeRow">
-            <a
-              id="amazonIcon"
-              class="storeLink"
-              target="_blank"
-              rel="noopener"
-              href="https://buy.bookfunnel.com/9s1ccz48vy?format=ebook&store=amazon&domain=amazon.com"
-              title="Amazon"
-            >
-              <img class="storeIcon" src="https://static.bookfunnel.com/images/stores/amazon.png" alt="Amazon" />
-              <span>.com</span>
-            </a>
-          </div>
-        </div>
-      </section>
-
-      <div class="footer"></div>
-    </div>
-  </div>
-
-  <script>
-    // Tracks clicks on BOTH the big button + the Amazon icon/link
-    function trackAmazonClick(source) {
-      try {
-        if (typeof fbq === 'function') {
-          fbq('trackCustom', 'AmazonClick', { source: source });
-        }
-      } catch (e) {}
-    }
-
-    const amazonBtn = document.getElementById('amazonBtn');
-    const amazonIcon = document.getElementById('amazonIcon');
-
-    if (amazonBtn) {
-      amazonBtn.addEventListener('click', function () {
-        trackAmazonClick('button');
-      });
-    }
-
-    if (amazonIcon) {
-      amazonIcon.addEventListener('click', function () {
-        trackAmazonClick('icon');
-      });
-    }
-  </script>
-</body>
-</html>
+        0 0 30px rgba(255,217,102,.32),
+        0 0 62px rgba(255,217,102,.16);
