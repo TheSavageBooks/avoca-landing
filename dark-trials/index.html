@@ -4,18 +4,17 @@
   <meta charset="UTF-8" />
   <meta name="author" content="I. Savage" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="book" />
   <meta property="og:url" content="https://thesavagebooks.github.io/avoca-landing/dark-trials/" />
   <meta property="og:title" content="The Vickie Chronicles: DARK TRIALS" />
   <meta property="og:image" content="https://bookfunnelimages.com/images/covers/74rdvoto3f/cover_md.jpg" />
-  <meta property="og:description" content="Three cases. Three dark corners of the system. One girl who won’t break. Dark Trials is the explosive prequel to The Vickie Chronicles, following Vickie Bartolucci, a fearless, quick-witted New Yorker, as she’s forced to survive three escalating mysteries." />
+  <meta property="og:description" content="Three cases. Three dark corners of the system. One girl who won’t break." />
 
   <title>The Vickie Chronicles: DARK TRIALS</title>
 
-  <!-- Facebook Pixel Code -->
+  <!-- Facebook Pixel -->
   <script>
     !function(f,b,e,v,n,t,s){
       if(f.fbq)return;
@@ -31,74 +30,59 @@
       t.src=v;
       s=b.getElementsByTagName(e)[0];
       s.parentNode.insertBefore(t,s)
-    }(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    }(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
 
-    fbq('init', '1266134602043216');
-    fbq('track', 'PageView');
-    fbq('track', 'ViewContent');
+    fbq('init','1266134602043216');
+    fbq('track','PageView');
+    fbq('track','ViewContent');
   </script>
 
   <noscript>
     <img height="1" width="1" style="display:none"
       src="https://www.facebook.com/tr?id=1266134602043216&ev=ViewContent&noscript=1" />
   </noscript>
-  <!-- End Facebook Pixel Code -->
 
   <style>
     :root{
-      --bg:#fff3df;
-
-      --card:#ffffff;
-      --panel:#fff0d2;
-
-      --brand:#223159;
-      --brand-dark:#182444;
-
+      --outer:#fff3df;
+      --blue:#223159;
+      --blue-dark:#182444;
       --ink:#151a26;
-      --muted:#2c3550;
 
-      --warm-border: rgba(255, 176, 96, .75);
-      --warm-shadow: rgba(255, 156, 66, .20);
-
+      --warm-border: rgba(255,176,96,.7);
+      --warm-shadow: rgba(255,156,66,.2);
       --yellow-mist: rgba(255,217,102,.12);
+      --orange-glow: rgba(255,140,0,.3);
 
-      --orange-glow-1: rgba(255,140,0,.32);
-      --orange-glow-2: rgba(255,140,0,.16);
-
-      --radius: 16px;
-      --max: 980px;
+      --radius:16px;
+      --max:980px;
     }
-
-    *{box-sizing:border-box}
 
     body{
       margin:0;
+      background:var(--outer);
       font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
-      background:var(--bg);
-      color:var(--ink);
-      line-height:1.6;
     }
 
     .wrap{
       max-width:var(--max);
       margin:0 auto;
-      padding:34px 16px 56px;
+      padding:32px 16px 56px;
     }
 
     .shell{
-      background:var(--card);
+      background:#fff;
       border-radius:var(--radius);
-      overflow:hidden;
-      border: 1px solid rgba(255, 176, 96, .55);
+      border:1px solid rgba(255,176,96,.5);
       box-shadow:
         0 0 0 6px var(--warm-border),
-        0 18px 40px rgba(0,0,0,.10),
+        0 18px 40px rgba(0,0,0,.1),
         0 0 26px var(--warm-shadow);
+      overflow:hidden;
     }
 
-    /* title + book stage stays blue */
     .top{
-      background: #223159;
+      background:var(--blue);
       padding:26px;
       display:grid;
       grid-template-columns:300px 1fr;
@@ -106,259 +90,148 @@
       align-items:center;
     }
 
-    /* orange glow around book */
     .cover{
-      width:100%;
       max-width:300px;
-      margin:0 auto;
+      margin:auto;
       border-radius:12px;
       overflow:hidden;
-      background:#fff;
       box-shadow:
         0 18px 35px rgba(0,0,0,.18),
-        0 0 26px var(--orange-glow-1),
-        0 0 54px var(--orange-glow-2);
+        0 0 30px var(--orange-glow);
+      background:#fff;
     }
 
-    .cover img{display:block;width:100%;height:auto}
+    .cover img{width:100%;display:block}
 
-    /* 3-line structure */
-    h1{
-      margin:0 0 10px 0;
-      font-size: clamp(28px, 3.1vw, 42px);
-      line-height:1.15;
-      letter-spacing:.2px;
-    }
-
-    .tagline{
-      margin:0 0 12px 0;
-      font-weight:700;
-      font-family:"Courier New", Courier, monospace;
-      font-size: clamp(18px, 2.0vw, 22px);
-      letter-spacing: .25px;
-    }
-
-    .quote{
-      margin:0;
-      font-style: italic;
-      font-size: 16px;
-      line-height:1.45;
-      max-width: 56ch;
-    }
-
-    /* white text on the blue stage */
     .top h1,
     .top .tagline,
     .top .quote{
-      color:#ffffff;
+      color:#fff;
     }
 
-    .top h1{
-      text-shadow:
-        0 2px 0 rgba(0,0,0,.18),
-        0 10px 22px rgba(0,0,0,.28);
+    h1{
+      margin:0 0 10px;
+      font-size:clamp(28px,3vw,42px);
+      line-height:1.15;
+    }
+
+    .tagline{
+      font-family:"Courier New",monospace;
+      font-weight:700;
+      margin:0 0 12px;
+    }
+
+    .quote{
+      font-style:italic;
+      max-width:56ch;
     }
 
     .bottom{
-      padding:18px 26px 26px;
       display:grid;
       grid-template-columns:1fr 320px;
       gap:22px;
-      align-items:start;
-      background:var(--card);
-
-      /* very subtle yellow outline around page area */
+      padding:20px 26px 26px;
       box-shadow: inset 0 0 0 1px var(--yellow-mist);
     }
 
-    /* body text back to brand blue */
     .bodyText{
+      color:var(--blue);
+      font-family:Georgia,"Book Antiqua",serif;
       font-size:18px;
-      color: var(--brand);
-      font-family:"Book Antiqua","Palatino Linotype",Palatino,Georgia,serif;
     }
 
-    .bodyText p{margin:0 0 14px 0}
-    .bodyText p:last-child{margin-bottom:0}
+    .bodyText p{margin:0 0 14px}
 
-    .ctaCol{text-align:center;padding-top:4px}
+    .ctaCol{text-align:center}
 
     .btn{
-      position:relative;
       display:block;
-      width:100%;
-      background:var(--brand);
+      background:var(--blue);
       color:#fff;
       text-decoration:none;
       font-weight:900;
-      letter-spacing:.5px;
-      padding:14px 18px;
+      padding:14px;
       border-radius:12px;
-      border:1px solid rgba(255,255,255,.14);
       box-shadow:
-        inset 0 1px 0 rgba(255,255,255,.22),
-        inset 0 -2px 0 rgba(0,0,0,.20),
-        0 14px 30px rgba(34,49,89,.24),
+        inset 0 1px 0 rgba(255,255,255,.25),
         0 0 22px rgba(255,217,102,.28);
-      transition: transform .06s ease, background .15s ease, box-shadow .15s ease;
     }
 
-    .btn::before{
-      content:"";
-      position:absolute;
-      inset:-16px;
-      border-radius:16px;
-      background:
-        radial-gradient(70% 90% at 50% 105%, rgba(255,217,102,.26), rgba(255,217,102,0) 70%);
-      filter: blur(16px);
-      opacity:.95;
-      z-index:-1;
-      pointer-events:none;
-    }
+    .btn:hover{background:var(--blue-dark)}
 
-    .btn:hover{
-      background:var(--brand-dark);
-      box-shadow:
-        inset 0 1px 0 rgba(255,255,255,.24),
-        inset 0 -2px 0 rgba(0,0,0,.22),
-        0 18px 38px rgba(34,49,89,.26),
-        0 0 26px rgba(255,217,102,.34);
-    }
-
-    .btn:active{transform: translateY(1px)}
-
-    .available{
-      margin-top:12px;
-      font-size:13px;
-      letter-spacing:.2px;
-      color: rgba(255,255,255,.85);
-    }
+    .available{margin-top:12px;font-size:13px}
 
     .storeRow{
       display:flex;
       justify-content:center;
-      align-items:center;
       gap:10px;
       margin-top:10px;
     }
 
-    .storeLink{
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      text-decoration:none;
-      color:#ffffff;
-      font-weight:800;
-    }
+    .storeIcon{width:34px}
 
-    .storeIcon{width:34px;height:34px;display:block}
-
-    .footer{
-      padding:14px 0 10px;
-      text-align:center;
-      opacity:.65;
-      font-size:12px;
-      color:#3b4257;
-      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
-      background: transparent;
-    }
-
-    @media (max-width: 900px){
-      .top{grid-template-columns:1fr; text-align:center}
-      .bottom{grid-template-columns:1fr}
-      .ctaCol{order:2}
-    }
-
-    @media (max-width: 480px){
-      .wrap{padding:20px 14px 44px}
-      .top{padding:18px}
-      .bottom{padding:16px}
-      .cover{max-width:260px}
-      .bodyText{font-size:17px}
+    @media(max-width:900px){
+      .top,.bottom{grid-template-columns:1fr;text-align:center}
     }
   </style>
 </head>
 
 <body>
-  <div class="wrap">
-    <div class="shell">
+<div class="wrap">
+  <div class="shell">
 
-      <section class="top">
-        <div class="cover">
-          <img
-            src="https://bookfunnelimages.com/images/covers/74rdvoto3f/cover_md.jpg"
-            alt="The Vickie Chronicles: Dark Trials cover"
-          />
+    <section class="top">
+      <div class="cover">
+        <img src="https://bookfunnelimages.com/images/covers/74rdvoto3f/cover_md.jpg" alt="Dark Trials cover">
+      </div>
+      <div>
+        <h1>The Vickie Chronicles: DARK TRIALS</h1>
+        <p class="tagline">A gritty mystery series that readers binge.</p>
+        <p class="quote">“Hooked me immediately. Couldn’t stop reading.”</p>
+      </div>
+    </section>
+
+    <section class="bottom">
+      <div class="bodyText">
+        <p>Three cases. Three dark corners of the system. One girl who won’t break.</p>
+        <p>Dark Trials is the explosive prequel to The Vickie Chronicles, following Vickie Bartolucci as she’s forced to survive three escalating mysteries.</p>
+        <p>From Queens’ criminal underworld… to a secluded convent hiding a murder… to a brutal juvenile facility crawling with corruption…</p>
+        <p>Vickie must outthink killers, institutions, and her own past — or disappear.</p>
+      </div>
+
+      <div class="ctaCol">
+        <a id="amazonBtn"
+           class="btn"
+           target="_blank"
+           rel="noopener noreferrer"
+           href="https://www.amazon.com/Dark-Trials-Heart-Pounding-Mystery-Thriller-Chronicles/dp/1959791117/?maas=maas_adg_51FE5899DF7312D8957683EB3AF7854A_afap_abs&ref_=aa_maas&tag=maas">
+          READ ON AMAZON
+        </a>
+
+        <div class="available">Available on</div>
+
+        <div class="storeRow">
+          <a id="amazonIcon"
+             target="_blank"
+             rel="noopener noreferrer"
+             href="https://www.amazon.com/Dark-Trials-Heart-Pounding-Mystery-Thriller-Chronicles/dp/1959791117/?maas=maas_adg_51FE5899DF7312D8957683EB3AF7854A_afap_abs&ref_=aa_maas&tag=maas">
+            <img class="storeIcon" src="https://static.bookfunnel.com/images/stores/amazon.png" alt="Amazon">
+          </a>
         </div>
+      </div>
+    </section>
 
-        <div>
-          <h1>The Vickie Chronicles: DARK TRIALS</h1>
-          <p class="tagline">A gritty mystery series that readers binge.</p>
-          <p class="quote">“Hooked me immediately. Couldn’t stop reading.”</p>
-        </div>
-      </section>
-
-      <section class="bottom">
-        <div class="bodyText">
-          <p>Three cases. Three dark corners of the system. One girl who won’t break.</p>
-          <p>Dark Trials is the explosive prequel to The Vickie Chronicles, following Vickie Bartolucci, a fearless, quick-witted New Yorker, as she’s forced to survive three escalating mysteries.</p>
-          <p>From Queens’ criminal underworld… to a secluded convent hiding a murder… to a brutal juvenile facility crawling with corruption…</p>
-          <p>Vickie must outthink killers, institutions, and her own past — or disappear.</p>
-          <p>Start where the story turns dark.</p>
-        </div>
-
-        <div class="ctaCol">
-          <a
-            id="amazonBtn"
-            class="btn"
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://www.amazon.com/Dark-Trials-Heart-Pounding-Mystery-Thriller-Chronicles/dp/1959791117/?maas=maas_adg_51FE5899DF7312D8957683EB3AF7854A_afap_abs&ref_=aa_maas&tag=maas"
-          >READ ON AMAZON</a>
-
-          <div class="available">Available on</div>
-
-          <div class="storeRow">
-            <a
-              id="amazonIcon"
-              class="storeLink"
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://www.amazon.com/Dark-Trials-Heart-Pounding-Mystery-Thriller-Chronicles/dp/1959791117/?maas=maas_adg_51FE5899DF7312D8957683EB3AF7854A_afap_abs&ref_=aa_maas&tag=maas"
-              title="Amazon"
-            >
-              <img
-                class="storeIcon"
-                src="https://static.bookfunnel.com/images/stores/amazon.png"
-                alt="Amazon"
-              />
-              <span>.com</span>
-            </a>
-          </div>
-        </div>
-      </section>
-
-      <div class="footer">© <span id="yr"></span> I. Savage</div>
-
-    </div>
   </div>
+</div>
 
-  <script>
-    document.getElementById('yr').textContent = new Date().getFullYear();
-
-    function trackAmazonClick(source){
-      try{
-        if(typeof fbq === 'function'){
-          fbq('trackCustom','AmazonClick',{source:source});
-        }
-      }catch(e){}
+<script>
+  function trackAmazonClick(source){
+    if(typeof fbq==='function'){
+      fbq('trackCustom','AmazonClick',{source});
     }
-
-    const amazonBtn = document.getElementById('amazonBtn');
-    const amazonIcon = document.getElementById('amazonIcon');
-
-    if(amazonBtn) amazonBtn.addEventListener('click', () => trackAmazonClick('button'));
-    if(amazonIcon) amazonIcon.addEventListener('click', () => trackAmazonClick('icon'));
-  </script>
+  }
+  document.getElementById('amazonBtn').onclick=()=>trackAmazonClick('button');
+  document.getElementById('amazonIcon').onclick=()=>trackAmazonClick('icon');
+</script>
 </body>
 </html>
