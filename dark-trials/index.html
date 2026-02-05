@@ -46,34 +46,24 @@
 
   <style>
     :root{
-      /* warmer overall parchment */
       --bg:#fff3df;
 
-      /* card + panel */
       --card:#ffffff;
       --panel:#fff0d2;
 
-      /* brand blues */
       --brand:#223159;
       --brand-dark:#182444;
 
-      /* text */
       --ink:#151a26;
       --muted:#2c3550;
 
-      /* warm accents */
-      --warm-border: rgba(255, 176, 96, .75); /* warmer shell border */
+      --warm-border: rgba(255, 176, 96, .75);
       --warm-shadow: rgba(255, 156, 66, .20);
 
-      /* very subtle yellow (you asked “very little”) */
       --yellow-mist: rgba(255,217,102,.12);
 
-      /* orange book glow */
       --orange-glow-1: rgba(255,140,0,.32);
       --orange-glow-2: rgba(255,140,0,.16);
-
-      --border: rgba(20,25,35,.10);
-      --shadow: 0 18px 40px rgba(0,0,0,.10);
 
       --radius: 16px;
       --max: 980px;
@@ -95,7 +85,6 @@
       padding:34px 16px 56px;
     }
 
-    /* warmer shell border (NO blue) */
     .shell{
       background:var(--card);
       border-radius:var(--radius);
@@ -107,8 +96,9 @@
         0 0 26px var(--warm-shadow);
     }
 
+    /* title + book stage stays blue */
     .top{
-      background:var(--panel);
+      background: #223159;
       padding:26px;
       display:grid;
       grid-template-columns:300px 1fr;
@@ -116,7 +106,7 @@
       align-items:center;
     }
 
-    /* orange glow around book (NOT turquoise) */
+    /* orange glow around book */
     .cover{
       width:100%;
       max-width:300px;
@@ -132,14 +122,12 @@
 
     .cover img{display:block;width:100%;height:auto}
 
-    /* 3-line structure restored */
+    /* 3-line structure */
     h1{
       margin:0 0 10px 0;
       font-size: clamp(28px, 3.1vw, 42px);
       line-height:1.15;
       letter-spacing:.2px;
-      color:#111827;
-      text-shadow: 0 2px 0 rgba(255,255,255,.55), 0 10px 22px rgba(0,0,0,.18);
     }
 
     .tagline{
@@ -147,17 +135,28 @@
       font-weight:700;
       font-family:"Courier New", Courier, monospace;
       font-size: clamp(18px, 2.0vw, 22px);
-      color: var(--muted);
       letter-spacing: .25px;
     }
 
     .quote{
       margin:0;
       font-style: italic;
-      color:#1f2a44;
       font-size: 16px;
       line-height:1.45;
       max-width: 56ch;
+    }
+
+    /* white text on the blue stage */
+    .top h1,
+    .top .tagline,
+    .top .quote{
+      color:#ffffff;
+    }
+
+    .top h1{
+      text-shadow:
+        0 2px 0 rgba(0,0,0,.18),
+        0 10px 22px rgba(0,0,0,.28);
     }
 
     .bottom{
@@ -172,7 +171,7 @@
       box-shadow: inset 0 0 0 1px var(--yellow-mist);
     }
 
-    /* body text back to the brand blue */
+    /* body text back to brand blue */
     .bodyText{
       font-size:18px;
       color: var(--brand);
@@ -184,7 +183,6 @@
 
     .ctaCol{text-align:center;padding-top:4px}
 
-    /* keep same button style; more yellow “mist” but not neon */
     .btn{
       position:relative;
       display:block;
@@ -233,7 +231,7 @@
       margin-top:12px;
       font-size:13px;
       letter-spacing:.2px;
-      color: var(--muted);
+      color: rgba(255,255,255,.85);
     }
 
     .storeRow{
@@ -249,7 +247,7 @@
       align-items:center;
       gap:10px;
       text-decoration:none;
-      color: var(--brand);
+      color:#ffffff;
       font-weight:800;
     }
 
@@ -262,6 +260,7 @@
       font-size:12px;
       color:#3b4257;
       font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+      background: transparent;
     }
 
     @media (max-width: 900px){
@@ -313,7 +312,7 @@
             id="amazonBtn"
             class="btn"
             target="_blank"
-            rel="noopener"
+            rel="noopener noreferrer"
             href="https://www.amazon.com/Dark-Trials-Heart-Pounding-Mystery-Thriller-Chronicles/dp/1959791117/?maas=maas_adg_51FE5899DF7312D8957683EB3AF7854A_afap_abs&ref_=aa_maas&tag=maas"
           >READ ON AMAZON</a>
 
@@ -324,7 +323,7 @@
               id="amazonIcon"
               class="storeLink"
               target="_blank"
-              rel="noopener"
+              rel="noopener noreferrer"
               href="https://www.amazon.com/Dark-Trials-Heart-Pounding-Mystery-Thriller-Chronicles/dp/1959791117/?maas=maas_adg_51FE5899DF7312D8957683EB3AF7854A_afap_abs&ref_=aa_maas&tag=maas"
               title="Amazon"
             >
