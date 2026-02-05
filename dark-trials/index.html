@@ -236,14 +236,24 @@
   </div>
 
   <script>
-    document.getElementById('yr').textContent = new Date().getFullYear();
-    function trackAmazonClick(source){
-      if(typeof fbq==='function'){
-        fbq('trackCustom','AmazonClick',{source:source});
-      }
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  function trackAmazonClick(source){
+    if (typeof fbq === 'function') {
+      fbq('trackCustom', 'AmazonClick', { source: source });
     }
-    amazonBtn.onclick=()=>trackAmazonClick('button');
-    amazonIcon.onclick=()=>trackAmazonClick('icon');
-  </script>
+  }
+
+  const amazonBtn = document.getElementById('amazonBtn');
+  const amazonIcon = document.getElementById('amazonIcon');
+
+  if (amazonBtn) {
+    amazonBtn.addEventListener('click', () => trackAmazonClick('button'));
+  }
+
+  if (amazonIcon) {
+    amazonIcon.addEventListener('click', () => trackAmazonClick('icon'));
+  }
+</script>
 </body>
 </html>
