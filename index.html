@@ -8,32 +8,28 @@
 
   <title>The Freaks of Avoca Island: THE STORM</title>
 
-  <!-- Facebook Pixel Code -->
+  <!-- Facebook Pixel -->
   <script>
     !function(f,b,e,v,n,t,s){
       if(f.fbq)return;
       n=f.fbq=function(){
-        n.callMethod ? n.callMethod.apply(n,arguments) : n.queue.push(arguments)
+        n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)
       };
       if(!f._fbq)f._fbq=n;
-      n.push=n;
-      n.loaded=!0;
-      n.version='2.0';
-      n.queue=[];
-      t=b.createElement(e);t.async=!0;
-      t.src=v;
+      n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];
+      t=b.createElement(e);t.async=!0;t.src=v;
       s=b.getElementsByTagName(e)[0];
       s.parentNode.insertBefore(t,s)
     }(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
 
-    fbq('init', '1266134602043216');
-    fbq('track', 'PageView');
-    fbq('track', 'ViewContent');
+    fbq('init','1266134602043216');
+    fbq('track','PageView');
+    fbq('track','ViewContent');
   </script>
 
   <noscript>
     <img height="1" width="1" style="display:none"
-      src="https://www.facebook.com/tr?id=1266134602043216&ev=ViewContent&noscript=1" />
+      src="https://www.facebook.com/tr?id=1266134602043216&ev=ViewContent&noscript=1"/>
   </noscript>
 
   <style>
@@ -52,7 +48,7 @@
     }
 
     .card{
-      background:#fff;
+      background:#ffffff;
       border-radius:16px;
       box-shadow:0 18px 40px rgba(0,0,0,.10);
       overflow:hidden;
@@ -74,34 +70,34 @@
     }
 
     h1{
-      margin:0 0 10px;
+      margin:0 0 8px;
       font-size:34px;
     }
 
     .authorline{
       font-size:15px;
       color:#444;
-      margin-bottom:12px;
+      margin-bottom:10px;
     }
 
     .rating{
       display:flex;
       align-items:center;
       gap:8px;
-      margin-bottom:14px;
+      margin-bottom:12px;
       font-size:15px;
       color:#444;
     }
 
     .stars{
       font-size:18px;
-      color:#f5a623; /* Amazon-style orange */
+      color:#f5a623;
       letter-spacing:2px;
     }
 
     .tagline{
       font-weight:600;
-      margin-bottom:10px;
+      margin-bottom:8px;
     }
 
     .quote{
@@ -136,25 +132,18 @@
     .btn{
       display:block;
       background:#223159;
-      color:#fff;
+      color:#ffffff;
       text-decoration:none;
       font-weight:700;
       padding:14px 18px;
       border-radius:10px;
-      margin-bottom:16px;
+      margin-bottom:18px;
     }
 
-    .side p{
-      font-size:14px;
-      color:#333;
-      margin:0 0 10px;
-    }
-
-    .reviews{
-      margin-top:20px;
+    .sideText{
       font-size:15px;
-      font-style:italic;
-      color:#444;
+      line-height:1.5;
+      color:#222;
     }
 
     .footer{
@@ -165,7 +154,7 @@
     }
 
     @media(max-width:900px){
-      .top, .bottom{
+      .top,.bottom{
         grid-template-columns:1fr;
       }
     }
@@ -192,45 +181,48 @@
 
         <div class="tagline">A Southern Gothic mystery with a paranormal edge.</div>
 
-        <div class="quote">“Quietly intense and unsettlingly addictive.”</div>
+        <div class="quote">“Intrigue on every page. Hooked me immediately.”</div>
       </div>
     </section>
 
     <section class="bottom">
       <div class="bodyText">
-        <p><strong>Lightning splits the bayou.</strong> An FBI agent wakes up buried alive on an island that shouldn’t exist.</p>
 
-        <p>Lawrence Mayfield claws out of the mud with six bullet wounds and no memory of who ordered his execution. The only road off Avoca Island has washed out. The bridge is gone. The phones are dead.</p>
+        <p><strong>Lightning splits the bayou. FBI agent Lawrence Mayfield wakes up buried alive on a forgotten island.</strong></p>
+
+        <p>He claws his way out of the mud with six bullet wounds and no memory of who ordered his execution.</p>
+
+        <p>The storm has washed out the only road off Avoca Island. The bridge is gone. The phones are dead.</p>
 
         <p>The LaRue dynasty controls everything. Smuggling routes. Money. Loyalty. Freedom. Mayfield infiltrated their operation. Now they know exactly who he is.</p>
 
         <p>But Avoca Island is not just a crime scene. An abandoned carnival rots in the swamp. A Keeper claims the island protects its own balance. Locals whisper that some debts are paid in blood.</p>
 
-        <p><strong>On Avoca Island, the storm is only the beginning.</strong></p>
+        <p><strong>Because on Avoca Island, the storm is only the beginning.</strong></p>
 
-        <div class="reviews">
-          “Rich characters and intrigue on every page.”  
-          <br>
-          “Un-putdownable.”
-        </div>
       </div>
 
       <div class="side">
+
         <a id="amazonBtn" class="btn" target="_blank" rel="noopener"
            href="https://www.amazon.com/Storm-Heart-Pounding-Paranormal-Mystery-Serialization-ebook/dp/B0FVZ55TRP/?maas=maas_adg_2D6652330FD4EAB382B0A18CA19F682A_afap_abs&ref_=aa_maas&tag=maas">
           READ ON AMAZON
         </a>
 
-        <p>Six bullet wounds. No memory.</p>
-        <p>No way off the island.</p>
-        <p>Someone wants him silenced.</p>
+        <div class="sideText">
+          Buried alive.<br>
+          Six bullet wounds.<br>
+          No memory of who pulled the trigger.<br><br>
+          And the hunt is not over.
+        </div>
 
-        <div style="margin-top:14px;">
+        <div style="margin-top:16px;">
           <a id="amazonIcon" target="_blank" rel="noopener"
              href="https://www.amazon.com/Storm-Heart-Pounding-Paranormal-Mystery-Serialization-ebook/dp/B0FVZ55TRP/?maas=maas_adg_2D6652330FD4EAB382B0A18CA19F682A_afap_abs&ref_=aa_maas&tag=maas">
             <img src="https://static.bookfunnel.com/images/stores/amazon.png" width="36">
           </a>
         </div>
+
       </div>
     </section>
 
