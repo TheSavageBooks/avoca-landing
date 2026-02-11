@@ -104,19 +104,30 @@
 
     .cover img{display:block;width:100%;height:auto}
 
-    h1{
+    /* NEW: tighter conversion-first hero stack */
+    .heroLead{
       margin:0 0 10px;
-      font-size:clamp(28px,3.1vw,42px);
+      font-size:clamp(26px,2.8vw,36px);
       line-height:1.15;
       color:#111827;
       text-shadow:0 2px 0 rgba(255,255,255,.55),0 10px 22px rgba(0,0,0,.20);
+      font-weight:900;
+      max-width:38ch;
+    }
+
+    h1{
+      margin:0 0 8px;
+      font-size:clamp(22px,2.2vw,28px);
+      line-height:1.15;
+      color:#111827;
+      opacity:.92;
     }
 
     .tagline{
       margin:0 0 12px;
-      font-weight:700;
+      font-weight:800;
       font-family:"Courier New",Courier,monospace;
-      font-size:clamp(18px,2vw,22px);
+      font-size:clamp(16px,1.7vw,19px);
       color:var(--muted);
     }
 
@@ -132,7 +143,7 @@
     .bottom{
       padding:18px 26px 26px;
       display:grid;
-      grid-template-columns:1fr 320px;
+      grid-template-columns:1fr 340px; /* slightly wider CTA column */
       gap:22px;
       align-items:start;
     }
@@ -145,7 +156,27 @@
     .bodyText p{margin:0 0 14px}
     .bodyText p:last-child{margin-bottom:0}
 
-    .ctaCol{text-align:center;padding-top:4px}
+    /* NEW: compact punch list under the button */
+    .punch{
+      margin-top:14px;
+      text-align:left;
+      font-family:"Book Antiqua","Palatino Linotype",Palatino,Georgia,serif;
+      font-size:17px;
+      line-height:1.55;
+      color:#121826;
+    }
+    .punch .line{margin:0 0 10px}
+    .punch .line strong{font-weight:900}
+
+    /* NEW: subtle “right column” backing to feel intentional */
+    .ctaCol{
+      text-align:center;
+      padding:12px 14px 16px;
+      border-radius:14px;
+      background:rgba(255,255,255,.52);
+      border:1px solid rgba(20,25,35,.08);
+      box-shadow: 0 10px 26px rgba(0,0,0,.08);
+    }
 
     .btn{
       position:relative;
@@ -156,15 +187,16 @@
       text-decoration:none;
       font-weight:900;
       letter-spacing:.5px;
-      padding:14px 18px;
+      padding:16px 18px; /* slightly larger */
       border-radius:12px;
       border:1px solid rgba(255,255,255,.14);
       box-shadow:
         inset 0 1px 0 rgba(255,255,255,.22),
         inset 0 -2px 0 rgba(0,0,0,.20),
-        0 14px 30px rgba(34,49,89,.24),
+        0 16px 34px rgba(34,49,89,.26),
         0 0 18px rgba(255,217,102,.18),
         0 0 44px rgba(255,217,102,.10);
+      font-size:16px;
     }
 
     .btn::before{
@@ -180,15 +212,29 @@
       z-index:-1;
     }
 
-    .available{margin-top:12px;font-size:13px;color:var(--muted)}
+    .available{margin-top:10px;font-size:13px;color:var(--muted)}
+    .storeRow{display:flex;justify-content:center;gap:10px;margin-top:8px}
 
-    .storeRow{display:flex;justify-content:center;gap:10px;margin-top:10px}
-
-    .storeLink{display:inline-flex;align-items:center;gap:10px;font-weight:800;color:var(--brand);text-decoration:none}
+    .storeLink{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      font-weight:800;
+      color:var(--brand);
+      text-decoration:none;
+    }
 
     .storeIcon{width:34px;height:34px}
 
     .footer{text-align:center;font-size:12px;opacity:.65;padding:14px 0 10px}
+
+    /* Responsive */
+    @media (max-width: 860px){
+      .top{grid-template-columns:1fr; text-align:left}
+      .cover{max-width:320px}
+      .bottom{grid-template-columns:1fr}
+      .ctaCol{text-align:center}
+    }
   </style>
 </head>
 
@@ -201,18 +247,28 @@
           <img src="https://bookfunnelimages.com/images/covers/aj480owvkm/cover_md.jpg" alt="The Freaks of Avoca Island: The Storm cover">
         </div>
         <div>
+          <!-- NEW: lead hook placed first -->
+          <p class="heroLead">An FBI agent wakes up buried alive on an island that shouldn&rsquo;t exist.</p>
+
           <h1>The Freaks of Avoca Island: THE STORM</h1>
-          <p class="tagline">A paranormal southern gothic mystery.</p>
-          <p class="quote">“Hooked me from the beginning; couldn’t stop reading.”</p>
+
+          <!-- UPDATED: genre positioning (mystery first, paranormal second) -->
+          <p class="tagline">A Southern Gothic mystery with paranormal elements.</p>
+
+          <!-- unchanged quote text, just positioned as real social proof -->
+          <p class="quote">“Hooked me from the beginning; couldn&rsquo;t stop reading.”</p>
         </div>
       </section>
 
       <section class="bottom">
         <div class="bodyText">
-          <p>Book one is a complete, fast read. You won&rsquo;t be left hanging.</p>
-          <p>Lightning splits the bayou. An FBI agent wakes up buried alive on an island that shouldn&rsquo;t exist.</p>
-          <p>Lawrence Mayfield crawls out of the mud with six bullet wounds, no memory of who put him there, and no way off Avoca Island. The only road in has washed out. The only bridge has closed behind him.</p>
-          <p>Locals whisper about the LaRue dynasty&mdash;smugglers, killers, kings of the swamp. But it&rsquo;s the other things that haunt the island: carnival ruins that still breathe, a Keeper who claims the island keeps its own balance, and secrets that refuse to stay buried.</p>
+          <!-- REMOVED (per recommendation): the “Book one is a complete…” line -->
+          <p>Lightning splits the bayou.</p>
+          <p>Lawrence Mayfield claws his way out of the mud with six bullet wounds, no memory of who put him there, and no way off Avoca Island. The only road in has washed out. The only bridge has closed behind him. The phones are dead.</p>
+          <p>The LaRue dynasty controls everything. Smuggling routes. Money. Loyalty. Freedom. Mayfield infiltrated their operation. Now they know exactly who he is.</p>
+          <p>But Avoca Island is not just a crime scene. Carnival ruins rot in the swamp. A Keeper claims the island protects its own balance. Locals whisper that some debts are paid in blood.</p>
+          <p>As floodwaters rise and buried secrets surface, Mayfield must uncover who betrayed him before the island finishes what the grave began.</p>
+          <p>Because on Avoca Island, the storm is only the beginning.</p>
         </div>
 
         <div class="ctaCol">
@@ -221,6 +277,14 @@
             READ ON AMAZON
           </a>
 
+          <!-- NEW: quick punchy reinforcement under CTA -->
+          <div class="punch" aria-label="Key hooks">
+            <p class="line"><strong>Six bullet wounds.</strong> No memory.</p>
+            <p class="line"><strong>No way off the island.</strong> Road washed out. Bridge gone. Phones dead.</p>
+            <p class="line"><strong>Someone wants him silenced.</strong> And Avoca Island keeps its own balance.</p>
+          </div>
+
+          <!-- simplified the label slightly (same function, less clutter) -->
           <div class="available">Available on</div>
 
           <div class="storeRow">
