@@ -11,7 +11,7 @@
   <meta property="og:url" content="https://thesavagebooks.github.io/avoca-landing/dark-trials/" />
   <meta property="og:title" content="The Vickie Chronicles: DARK TRIALS" />
   <meta property="og:image" content="https://bookfunnelimages.com/images/covers/74rdvoto3f/cover_md.jpg" />
-  <meta property="og:description" content="Three cases. Three dark corners of the system. One girl who won’t break." />
+  <meta property="og:description" content="From bestselling author I. Savage. Vickie Bartolucci doesn’t look for trouble. Trouble finds her." />
 
   <title>The Vickie Chronicles: DARK TRIALS</title>
 
@@ -39,8 +39,8 @@
 
   <style>
     :root{
-      --bg:#fff3df;            /* pale orange outer shell */
-      --panel:#e4eaf6;         /* EXACT Avoca pale blue-grey */
+      --bg:#1f1f23;            /* darker outer margin (replaces pale yellow) */
+      --panel:#e4eaf6;         /* keeps Avoca pale blue-grey panel */
       --card:#ffffff;
 
       --brand:#223159;
@@ -74,12 +74,11 @@
       border-radius:var(--radius);
       overflow:hidden;
       box-shadow:
-        0 0 0 6px rgba(255,176,96,.45),
-        0 18px 40px rgba(0,0,0,.10);
+        0 18px 40px rgba(0,0,0,.28);
     }
 
     .top{
-      background:var(--panel); /* MATCHES AVOCA */
+      background:var(--panel);
       padding:26px;
       display:grid;
       grid-template-columns:300px 1fr;
@@ -108,6 +107,45 @@
       color:#111827;
     }
 
+    /* small, clean proof line like the Avoca page vibe */
+    .proof{
+      margin:0 0 10px 0;
+      font-weight:800;
+      letter-spacing:.2px;
+      color:#111827;
+      opacity:.92;
+    }
+
+    .stars{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      margin:0 0 12px 0;
+      flex-wrap:wrap;
+    }
+
+    .starRow{
+      display:inline-flex;
+      gap:4px;
+      line-height:1;
+    }
+
+    /* orange stars that show clearly on the panel */
+    .star{
+      width:18px;
+      height:18px;
+      fill:#f59e0b;
+      stroke:#9a5a00;
+      stroke-width:1.2;
+      filter: drop-shadow(0 1px 0 rgba(255,255,255,.75));
+    }
+
+    .starsText{
+      font-weight:800;
+      color:#111827;
+      opacity:.9;
+    }
+
     .tagline{
       margin:0 0 12px 0;
       font-weight:700;
@@ -129,7 +167,7 @@
       display:grid;
       grid-template-columns:1fr 320px;
       gap:22px;
-      box-shadow: inset 0 0 0 1px var(--yellow-mist);
+      box-shadow: inset 0 0 0 1px rgba(255,217,102,.16);
     }
 
     .bodyText{
@@ -139,8 +177,18 @@
     }
 
     .bodyText p{margin:0 0 14px}
+    .bodyText p:last-child{margin-bottom:0}
 
     .ctaCol{text-align:center}
+
+    .sideTag{
+      margin:0 0 10px 0;
+      font-weight:900;
+      letter-spacing:.3px;
+      color:#111827;
+      font-family:"Courier New",Courier,monospace;
+      font-size:16px;
+    }
 
     .btn{
       display:block;
@@ -151,9 +199,13 @@
       padding:14px 18px;
       border-radius:12px;
       text-decoration:none;
+      border:1px solid rgba(255,255,255,.14);
       box-shadow:
         inset 0 1px 0 rgba(255,255,255,.22),
-        0 0 24px rgba(255,217,102,.32);
+        inset 0 -2px 0 rgba(0,0,0,.20),
+        0 14px 30px rgba(34,49,89,.22),
+        0 0 18px rgba(255,217,102,.18),
+        0 0 44px rgba(255,217,102,.10);
     }
 
     .available{margin-top:12px;font-size:13px;color:var(--muted)}
@@ -171,16 +223,55 @@
 
     .storeIcon{width:34px}
 
+    .miniProof{
+      margin:12px auto 0;
+      max-width:28ch;
+      font-size:13px;
+      color:var(--muted);
+      line-height:1.45;
+    }
+
+    .reviews{
+      margin-top:12px;
+      text-align:left;
+      background:rgba(34,49,89,.04);
+      border:1px solid rgba(34,49,89,.10);
+      border-radius:12px;
+      padding:12px 12px 10px;
+    }
+
+    .reviewsTitle{
+      margin:0 0 8px;
+      font-weight:900;
+      letter-spacing:.2px;
+      color:#111827;
+      font-size:13px;
+      text-transform:uppercase;
+      opacity:.9;
+    }
+
+    .reviewLine{
+      margin:0 0 8px;
+      font-style:italic;
+      color:#1f2a44;
+      font-size:14px;
+      line-height:1.35;
+    }
+    .reviewLine:last-child{margin-bottom:0}
+
     .footer{
       padding:14px 0 10px;
       text-align:center;
       font-size:12px;
       opacity:.65;
+      color:#ffffff;
     }
 
     @media(max-width:900px){
       .top{grid-template-columns:1fr;text-align:center}
+      .stars{justify-content:center}
       .bottom{grid-template-columns:1fr}
+      .footer{color:rgba(255,255,255,.75)}
     }
   </style>
 </head>
@@ -196,22 +287,53 @@
         </div>
 
         <div>
+          <p class="proof">From bestselling author I. Savage</p>
+
+          <div class="stars" aria-label="Five star rating">
+            <span class="starRow" aria-hidden="true">
+              <svg class="star" viewBox="0 0 24 24"><path d="M12 17.3 5.8 21l1.6-7.1L2 9.2l7.3-.6L12 2l2.7 6.6 7.3.6-5.4 4.7 1.6 7.1z"/></svg>
+              <svg class="star" viewBox="0 0 24 24"><path d="M12 17.3 5.8 21l1.6-7.1L2 9.2l7.3-.6L12 2l2.7 6.6 7.3.6-5.4 4.7 1.6 7.1z"/></svg>
+              <svg class="star" viewBox="0 0 24 24"><path d="M12 17.3 5.8 21l1.6-7.1L2 9.2l7.3-.6L12 2l2.7 6.6 7.3.6-5.4 4.7 1.6 7.1z"/></svg>
+              <svg class="star" viewBox="0 0 24 24"><path d="M12 17.3 5.8 21l1.6-7.1L2 9.2l7.3-.6L12 2l2.7 6.6 7.3.6-5.4 4.7 1.6 7.1z"/></svg>
+              <svg class="star" viewBox="0 0 24 24"><path d="M12 17.3 5.8 21l1.6-7.1L2 9.2l7.3-.6L12 2l2.7 6.6 7.3.6-5.4 4.7 1.6 7.1z"/></svg>
+            </span>
+            <span class="starsText">5-star reader rating</span>
+          </div>
+
           <h1>The Vickie Chronicles: DARK TRIALS</h1>
-          <p class="tagline">A gritty mystery series that readers binge.</p>
-          <p class="quote">“Hooked me immediately. Couldn’t stop reading.”</p>
+          <p class="tagline">A gritty mystery with twisty stakes.</p>
+          <p class="quote">“You will be hooked.”</p>
         </div>
       </section>
 
       <section class="bottom">
         <div class="bodyText">
-          <p>Three cases. Three dark corners of the system. One girl who won’t break.</p>
-          <p>Dark Trials is the explosive prequel to The Vickie Chronicles.</p>
-          <p>From Queens’ criminal underworld… to a secluded convent hiding a murder… to a brutal juvenile facility crawling with corruption…</p>
-          <p>Vickie must outthink killers, institutions, and her own past — or disappear.</p>
-          <p>Start where the story turns dark.</p>
+          <p><strong>A Vickie Chronicles Novel</strong></p>
+
+          <p>From bestselling author I. Savage comes a fast-paced crime novel about loyalty, buried secrets, and the cost of standing up when no one else will.</p>
+
+          <p>Vickie Bartolucci doesn’t look for trouble.</p>
+
+          <p>Trouble finds her.</p>
+
+          <p>A hidden cassette tape drags her into Queens’ criminal underworld.</p>
+
+          <p>A secluded convent retreat turns into a murder investigation wrapped in silence and lies.</p>
+
+          <p>Framed for a crime she didn’t commit, she’s locked inside juvenile detention and uncovers a conspiracy powerful adults are desperate to protect.</p>
+
+          <p>Each case raises the stakes.<br>Each mistake carries a cost.</p>
+
+          <p>And every time someone tries to silence her, she pushes harder.</p>
+
+          <p>Dark Trials stands on its own while setting the stage for The Vickie Chronicles.</p>
+
+          <p>Perfect for readers who love the twist-driven pace of Harlan Coben and the addictive tension of Freida McFadden.</p>
         </div>
 
         <div class="ctaCol">
+          <p class="sideTag">Queens. Convent. Juvie.</p>
+
           <a id="amazonBtn" class="btn" target="_blank" rel="noopener"
              href="https://www.amazon.com/Dark-Trials-Heart-Pounding-Mystery-Thriller-Chronicles/dp/1959791117/?maas=maas_adg_F6557786D11EFDC93439F38C23B6DB4D_afap_abs&ref_=aa_maas&tag=maas">
             READ ON AMAZON
@@ -228,6 +350,15 @@
               <span>.com</span>
             </a>
           </div>
+
+          <div class="miniProof">Twist-driven. Fast chapters. Three escalating mysteries.</div>
+
+          <div class="reviews">
+            <p class="reviewsTitle">What readers are saying</p>
+            <p class="reviewLine">“Three fast-paced mysteries.”</p>
+            <p class="reviewLine">“Gritty secrets and jaw-dropping twists.”</p>
+            <p class="reviewLine">“An entertaining and suspenseful read.”</p>
+          </div>
         </div>
       </section>
 
@@ -236,24 +367,21 @@
   </div>
 
   <script>
-  document.getElementById('yr').textContent = new Date().getFullYear();
+    document.getElementById('yr').textContent = new Date().getFullYear();
 
-  function trackAmazonClick(source){
-    if (typeof fbq === 'function') {
-      fbq('trackCustom', 'AmazonClick', { source: source });
+    function trackAmazonClick(source){
+      try{
+        if (typeof fbq === 'function') {
+          fbq('trackCustom', 'AmazonClick', { source: source });
+        }
+      }catch(e){}
     }
-  }
 
-  const amazonBtn = document.getElementById('amazonBtn');
-  const amazonIcon = document.getElementById('amazonIcon');
+    const amazonBtn = document.getElementById('amazonBtn');
+    const amazonIcon = document.getElementById('amazonIcon');
 
-  if (amazonBtn) {
-    amazonBtn.addEventListener('click', () => trackAmazonClick('button'));
-  }
-
-  if (amazonIcon) {
-    amazonIcon.addEventListener('click', () => trackAmazonClick('icon'));
-  }
-</script>
+    if (amazonBtn) amazonBtn.addEventListener('click', () => trackAmazonClick('button'));
+    if (amazonIcon) amazonIcon.addEventListener('click', () => trackAmazonClick('icon'));
+  </script>
 </body>
 </html>
